@@ -1,4 +1,3 @@
-package lambda_streams;
 
 import java.util.*;
 
