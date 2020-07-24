@@ -1,4 +1,3 @@
-package concurrency;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ class Sync extends Thread {
         super(name);
     }
 
-    @Override 
+    @Override
     public void run() {
         Random rand = new Random();
 
@@ -24,10 +23,18 @@ class Sync extends Thread {
     public static void main(String[] args)  {
         Sync syncThread = new Sync("sync thread");
         syncThread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         System.out.println(syncThread.nums);
-        //this prints out an empty list. write some code that will allow the data generated in the syncThread to show up  here.  There is a brute force way and a more sophisticated way.  Either or will work, but strive for sophistication :)
+        //this prints out an empty list. write some code that will allow the data generated in the syncThread to show
+        // up  here.  There is a brute force way and a more sophisticated way.  Either or will work, but strive for
+        // sophistication :)
 
     }
-    
+
 }
+
